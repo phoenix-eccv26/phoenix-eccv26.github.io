@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Phoenix mark</title>
+  <desc id="desc">A phoenix transforming from fragmented coral shapes into a precise mint wing.</desc>
+  <defs>
+    <linearGradient id="body" x1="22" y1="52" x2="78" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff725f"/>
+      <stop offset=".52" stop-color="#ffc08f"/>
+      <stop offset="1" stop-color="#8ff2c2"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .shard,.wing,.core{transform-box:fill-box;transform-origin:center}
+      .shard{animation:assemble 5.8s ease-in-out infinite}
+      .s1{--dx:-7px;--dy:-5px;--rot:-7deg}
+      .s2{--dx:-9px;--dy:1px;--rot:5deg;animation-delay:-.35s}
+      .s3{--dx:-6px;--dy:4px;--rot:-5deg;animation-delay:-.7s}
+      .s4{--dx:-3px;--dy:7px;--rot:7deg;animation-delay:-1.05s}
+      .wing{animation:breathe 4.2s ease-in-out infinite}
+      .core{animation:pulse 4.2s ease-in-out infinite}
+      @keyframes assemble{
+        0%,100%{transform:translate(var(--dx),var(--dy)) rotate(var(--rot));opacity:.58}
+        42%,64%{transform:translate(0,0) rotate(0);opacity:1}
+      }
+      @keyframes breathe{0%,100%{transform:scale(.985);opacity:.83}50%{transform:scale(1.025);opacity:1}}
+      @keyframes pulse{0%,100%{filter:url(#glow);opacity:.9}50%{filter:url(#glow);opacity:1}}
+      @media(prefers-reduced-motion:reduce){.shard,.wing,.core{animation:none}}
+    </style>
+  </defs>
+  <g fill="#ff725f" filter="url(#glow)">
+    <path class="shard s1" d="M13 25 28 30 34 40 19 37Z"/>
+    <path class="shard s2" d="M9 43 25 42 34 48 20 53Z"/>
+    <path class="shard s3" d="M14 60 31 53 36 59 24 68Z"/>
+    <path class="shard s4" d="M25 72 39 62 41 72 33 82Z"/>
+  </g>
+  <g class="wing" fill="#92f2c4" filter="url(#glow)">
+    <path d="M53 47C64 31 75 20 88 13 83 27 74 40 59 51Z"/>
+    <path d="M57 51C72 39 83 34 91 32 84 44 73 52 59 56Z"/>
+    <path d="M58 56C72 51 82 50 89 51 80 60 70 63 57 61Z"/>
+    <path d="M57 62C69 63 78 67 83 72 72 73 63 69 53 64Z"/>
+  </g>
+  <path class="core" d="M32 49C40 44 45 40 49 33c3-6 8-9 14-8-4 2-6 5-5 8 3-1 6 0 8 3-7-1-11 2-12 7 6 2 11 7 14 14-7-3-13-4-18-2 0 11 5 19 14 27-11-4-18-11-21-21-5 8-8 15-8 23-5-8-6-18-2-29-6 2-13 1-19-3 7 0 13-1 18-3Z" fill="url(#body)" filter="url(#glow)"/>
+</svg>
